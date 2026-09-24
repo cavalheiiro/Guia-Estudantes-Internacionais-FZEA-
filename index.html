@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FZEA/USP - Guia do Estudante</title>
+  <base target="_top">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="https://www.usp.br/wp-content/uploads/favicon.ico">
+
+  <!-- Bootstrap 5 CSS & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+
+  <style>
+    body { 
+      background-color: #9ebff0; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    }
+    .header-bar { 
+      background-color: #002147; 
+      color: white; 
+      border-bottom: 4px solid #E0A900; 
+    }
+    .card { 
+      border-radius: 10px; 
+      border: none; 
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05); 
+    }
+    .btn-fzea { 
+      background-color: #002147; 
+      color: white; 
+    }
+    .btn-fzea:hover { 
+      background-color: #001733; 
+      color: white; 
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: #eef5fc;
+      color: #002147;
+      font-weight: 600;
+    }
+
+    /* Margem para rolagem suave não colar na extremidade superior do ecrã */
+    .accordion-item {
+      scroll-margin-top: 15px;
+    }
+    
+    /* Botão Flutuante do Mapa com suporte para Safe Area de telemóveis */
+    .btn-mapa-flutuante {
+      position: fixed;
+      bottom: calc(20px + env(safe-area-inset-bottom));
+      right: 20px;
+      z-index: 1000;
+      background-color: var(--primary-blue, #004b8d);
+      border: 2px solid var(--accent-cyan, #00a8e8);
+      border-radius: 50%;
+      width: 52px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn-mapa-flutuante:hover {
+      background-color: var(--dark-blue, #0d2d4a);
+      transform: translateY(-3px);
+    }
+
+    /* Ajustes específicos para ecrãs móveis (máx. 767px) */
+    @media (max-width: 767.98px) {
+      .header-bar img {
+        max-height: 55px !important;
+      }
+      .header-bar h3 {
+        font-size: 1.25rem;
+      }
+      .header-bar p {
+        font-size: 0.9rem;
+      }
+      .card {
+        padding: 1rem !important; /* Aproveita melhor a largura útil do ecrã */
+      }
+      .accordion-button {
+        font-size: 0.95rem;
+        padding: 0.75rem 1rem;
+      }
+      .btn-mapa-flutuante {
+        width: 48px;
+        height: 48px;
+        font-size: 1.3rem;
+        bottom: calc(15px + env(safe-area-inset-bottom));
+        right: 15px;
+      }
+  /* Botão Flutuante do Mapa */
+  .btn-mapa-flutuante {
+        position: fixed;
+        bottom: 25px;
+        right: 25px;
+        z-index: 1000;
+        background-color: var(--primary-blue, #004b8d);
+        border: 2px solid var(--accent-cyan, #00a8e8);
+        border-radius: 50%; /* Transforma em um círculo */
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.6rem; /* Tamanho do emoji */
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+        transition: all 0.3s ease;
+        text-decoration: none;
+    }
+
+  .btn-mapa-flutuante:hover {
+      background-color: var(--dark-blue, #0d2d4a);
+      transform: translateY(-3px);
+  }
+
+    }
+
+    </style>    
+</head>
+<body>
+
+  <!-- Header Bar com Logos e Texto Centralizado -->
+  <div class="header-bar p-3 mb-4">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        
+        <!-- Logo Esquerda: FZEA -->
+        <div class="col-md-2 text-center text-md-start mb-2 mb-md-0">
+          <img src="https://lh3.googleusercontent.com/d/1dqxFlwVV5FHs_ONr6JgZLSjoIlgcxord" alt="Logo FZEA" style="max-height: 100px; width: auto;" onerror="this.style.display='none'">
+        </div>
+
+        <!-- Texto Central -->
+        <div class="col-md-8 text-center">
+          <h3 class="fw-bold m-0">UNIVERSIDADE DE SÃO PAULO</h3>
+          <p class="m-0 text-warning fw-semibold">Faculdade de Zootecnia e Engenharia de Alimentos - FZEA</p>
+          <small class="text-light opacity-75" id="headerSub">Guia do Estudante / Student Guide / Guía del Estudiante</small>
+        </div>
+
+        <!-- Logo Direita: CRInt -->
+        <div class="col-md-2 text-center text-md-end mt-2 mt-md-0">
+          <img src="https://lh3.googleusercontent.com/d/1zaNlVXlznzicJAKlcqY8kJdOM5rkiZbZ" alt="Logo CRInt" style="max-height: 100px; width: auto;" onerror="this.style.display='none'">
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+    <div class="container pb-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+        <div class="card p-4">
+            
+            <!-- Cabeçalho do Card & Seletor de Idiomas -->
+            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2 border-bottom pb-3">
+            <h4 class="fw-bold text-primary m-0" id="cardTitle"><i class="bi bi-journal-bookmark-fill me-2"></i>Guia do Estudante FZEA</h4>
+            
+            <div class="btn-group" role="group" aria-label="Idioma">
+                <button type="button" class="btn btn-fzea active btn-lang d-inline-flex align-items-center gap-1" onclick="setLanguage('pt', this)" title="Português">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 720 500" class="rounded-1">
+                    <rect width="720" height="500" fill="#009b3a"/>
+                    <polygon points="360,35 685,250 360,465 35,250" fill="#fedf00"/>
+                    <circle cx="360" cy="250" r="120" fill="#002776"/>
+                    <path d="M240,260 a125,125 0 0,1 235,-20" fill="none" stroke="#fff" stroke-width="14"/>
+                </svg>
+                <span>PT</span>
+                </button>
+
+                <button type="button" class="btn btn-outline-primary btn-lang d-inline-flex align-items-center gap-1" onclick="setLanguage('en', this)" title="English">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 650 400" class="rounded-1">
+                    <rect width="650" height="400" fill="#b22234"/>
+                    <path d="M0,31h650M0,92h650M0,154h650M0,215h650M0,277h650M0,338h650" stroke="#fff" stroke-width="31"/>
+                    <rect width="260" height="215" fill="#3c3b6e"/>
+                </svg>
+                <span>EN</span>
+                </button>
+
+                <button type="button" class="btn btn-outline-primary btn-lang d-inline-flex align-items-center gap-1" onclick="setLanguage('es', this)" title="Español">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 750 500" class="rounded-1">
+                    <rect width="750" height="500" fill="#c60b1e"/>
+                    <rect y="125" width="750" height="250" fill="#ffc400"/>
+                </svg>
+                <span>ES</span>
+                </button>
+            </div>
+            </div>
+
+            <!-- Filtro / Seletor Rápido de Seção -->
+            <div class="mb-4">
+            <label class="form-label fw-bold" id="labelSelect"><i class="bi bi-funnel me-1"></i>Ir para a Seção:</label>
+            <select id="secaoSelect" class="form-select border-primary fw-semibold" onchange="rolarParaSecao()">
+                <!-- Inserido dinamicamente -->
+            </select>
+            </div>
+          <hr class="my-3">
+
+          <!-- Sanfona / Accordion com o Conteúdo do Guia -->
+          <div class="accordion" id="accordionGuia">
+            <!-- Conteúdo dinâmico via JavaScript -->
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    const contentData = {
+      pt: {
+        headerSub: "Guia do Estudante Interativo - FZEA/USP",
+        cardTitle: "Guia do Estudante FZEA",
+        labelSelect: "Ir para a Seção:",
+        selectPlaceholder: "Selecione uma seção...",
+        mapPdfLink: "https://drive.google.com/file/d/1-xGA6qtZFGth5XRXHVabSdrd_a3YOm8j/preview",
+        sections: [
+          {
+            id: "sec1",
+            icon: "bi-emoji-smile",
+            title: "1. Boas-vindas à FZEA",
+            content: `<p>Seja muito bem-vindo(a) à Faculdade de Zootecnia e Engenharia de Alimentos da Universidade de São Paulo (FZEA/USP)!</p>
+            <p>Localizada na cidade de Pirassununga (SP), a FZEA oferece um ambiente acolhedor, com infraestrutura moderna e forte integração entre ensino, pesquisa e extensão.</p>
+            <p>Nossa missão é formar profissionais éticos e comprometidos com o desenvolvimento sustentável e a transformação da sociedade por meio da ciência e da tecnologia.</p>`
+          },
+          {
+            id: "sec2",
+            icon: "bi-building",
+            title: "2. Sobre a FZEA e a USP",
+            content: `<h6 class="fw-bold text-primary">Sobre a FZEA</h6>
+            <p>Criada em 1992, oferece cursos de graduação em Engenharia de Alimentos, Engenharia de Biossistemas, Medicina Veterinária e Zootecnia.</p>
+            <h6 class="fw-bold text-primary">Sobre a USP</h6>
+            <p>A Universidade de São Paulo (USP) é a maior universidade pública da América Latina, fundada em 1934, contando com 8 campi, mais de 90 mil alunos e 183 cursos de graduação.</p>`
+          },
+          {
+                id: "sec3",
+                icon: "bi-bus-front",
+                title: "3. Como Chegar à FZEA",
+                content: `<p>A FZEA está localizada em Pirassununga (SP), a cerca de 210 km da capital.</p>
+                <ul>
+                    <li><strong>Saindo de SP (Capital):</strong> Rodoviária do Tietê → Pirassununga (Viação Piracicabana ou Cometa). Viagem: ~3h30.</li>
+                    <li><strong>Do Aeroporto de Guarulhos (GRU):</strong> Airport Bus Service até o Tietê e ônibus para Pirassununga.</li>
+                    <li><strong>Do Aeroporto de Viracopos (Campinas):</strong> App de transporte direto (~1h30).</li>
+                </ul>
+                <div class="alert alert-info py-2"><i class="bi bi-info-circle me-1"></i><strong>Dica:</strong> Chegue com 5 dias de antecedência para adaptar-se e organizar a documentação.</div>
+    
+                 <div class="mt-3">
+                    <a href="https://maps.google.com/?q=FZEA+USP+Pirassununga" target="_blank" class="btn btn-fzea btn-sm">
+                        <i class="bi bi-geo-alt-fill me-1"></i> Ver Localização no Google Maps
+                    </a>
+                </div>`
+            },
+          {
+            id: "sec4",
+            icon: "bi-house-heart",
+            title: "4. Moradia Estudantil",
+            content: `<p>A Seção de Internacionalização reserva vaga no alojamento estudantil para os <strong>primeiros 15 dias</strong> do estudante estrangeiro. Após este período, o aluno deverá providenciar moradia fora do campus.</p>
+            <p>Há custo diário por pessoa para os quartos coletivos (inclui roupa de cama e banho).</p>
+            <p><strong>Check-in:</strong> Na Seção de Internacionalização (07h às 11h30 e 13h às 16h30). Chegadas fora desse horário devem retirar a chave na portaria do Prédio Central.</p>`
+          },
+          {
+            id: "sec5",
+            icon: "bi-card-checklist",
+            title: "5. Registro e Documentação",
+            content: `<p class="mb-3">Clique nos itens abaixo para expandir e ver as orientações detalhadas de cada documento:</p>
+
+            <!-- Accordion Interno da Seção 5 -->
+            <div class="accordion" id="accordionSec5">
+
+                <!-- ==================== ITEM 5.1 ==================== -->
+                <div class="accordion-item border border-primary border-opacity-25 rounded-3 mb-3 overflow-hidden" id="sec5-1">
+                <h2 class="accordion-header" id="heading5-1">
+                    <button class="accordion-button collapsed bg-light fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5-1" aria-expanded="false" aria-controls="collapse5-1">
+                    <i class="bi bi-shield-check me-2 fs-5"></i> 5.1. Registro Polícia Federal (CRNM)
+                    </button>
+                </h2>
+                <div id="collapse5-1" class="accordion-collapse collapse" aria-labelledby="heading5-1" data-bs-parent="#accordionSec5">
+                    <div class="accordion-body bg-light pt-2">
+
+                    <!-- Alerta de Prazo -->
+                    <div class="alert alert-warning border-start border-4 border-warning mb-3">
+                        <div class="d-flex align-items-center mb-1">
+                        <i class="bi bi-clock-history fs-4 me-2 text-dark"></i>
+                        <strong>Prazo Limite: 90 Dias</strong>
+                        </div>
+                        <small class="d-block">Você tem até <strong>90 dias</strong> após a primeira entrada no Brasil para registrar-se na Polícia Federal. Após este prazo, ficará em situação irregular.</small>
+                    </div>
+
+                    <!-- Etapas do Processo -->
+                    <div class="d-flex flex-column gap-3">
+
+                        <!-- Passo 1 -->
+                        <div class="p-3 border rounded bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-primary">Etapa 1</span>
+                            <small class="text-muted fw-bold"><i class="bi bi-folder-check me-1"></i> Documentação</small>
+                        </div>
+                        <h6 class="fw-bold mb-1">Reunir Documentos & Checklist</h6>
+                        <p class="small text-muted mb-2">Acesse o portal do GOV.BR, selecione o tipo do seu registro (<strong>VITEM IV</strong> para estudantes com visto ou <strong>Mercosul</strong>) e baixe o checklist oficial de exigências.</p>
+                        <a href="https://www.gov.br/pt-br/servicos/registrar-se-como-estrangeiro-no-brasil" target="_blank" class="btn btn-sm btn-outline-primary">
+                            <i class="bi bi-file-earmark-pdf me-1"></i> Acessar Checklist no GOV.BR
+                        </a>
+                        </div>
+
+                        <!-- Passo 2 -->
+                        <div class="p-3 border rounded bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-primary">Etapa 2</span>
+                            <small class="text-muted fw-bold"><i class="bi bi-pencil-square me-1"></i> Formulário</small>
+                        </div>
+                        <h6 class="fw-bold mb-1">Preenchimento do Formulário Online</h6>
+                        <p class="small text-muted mb-2">Preencha o formulário oficial da PF com atenção às dicas abaixo:</p>
+                        <ul class="small mb-2 ps-3 text-muted">
+                            <li><strong>Ocupação Principal:</strong> <code>930 - Estudante</code> (ou <code>78 - Professor</code> para pesquisadores).</li>
+                            <li><strong>Filiação:</strong> Preencha o nome completo dos seus pais.</li>
+                            <li><strong>Local de Entrada:</strong> Marque o local de desembarque (GRU, Viracopos, Congonhas ou Porto).</li>
+                        </ul>
+
+                        <!-- Box de Endereço Institucional -->
+                        <div class="p-2 border rounded bg-light small mb-2">
+                            <strong class="text-primary d-block mb-1"><i class="bi bi-building me-1"></i> Dados para o Endereço Institucional (FZEA/USP):</strong>
+                            <div><strong>Estabelecimento:</strong> FZEA/USP</div>
+                            <div><strong>Endereço:</strong> Av. Duque de Caxias Norte, 225 - Campus Fernando Costa</div>
+                            <div><strong>Bairro / Cidade:</strong> Jardim Elite – Pirassununga / SP | <strong>CEP:</strong> 13635-900</div>
+                            <div><strong>Telefone:</strong> +55 19 3565-6752</div>
+                        </div>
+                        <a href="https://servicos.dpf.gov.br/gru2/gru?nac=1&rec=9" target="_blank" class="btn btn-sm btn-outline-success">
+                            <i class="bi bi-card-list me-1"></i> Formulário Online
+                        </a>
+                        </div>
+
+                        <!-- Passo 3 -->
+                        <div class="p-3 border rounded bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-primary">Etapa 3</span>
+                            <small class="text-muted fw-bold"><i class="bi bi-receipt me-1"></i> Pagamento</small>
+                        </div>
+                        <h6 class="fw-bold mb-1">Pagamento da Taxa (GRU)</h6>
+                        <p class="small text-muted mb-2">Gere a Guia de Recolhimento da União (GRU) e efetue o pagamento na rede bancária antes da data do comparecimento presencial:</p>
+                        <ul class="small mb-2 ps-3 text-muted">
+                            <li><strong>VITEM IV:</strong> Código <code>140120</code> — R$ 204,77</li>
+                            <li><strong>MERCOSUL:</strong> Código <code>140066</code> (R$ 168,13) + Código <code>140120</code> (R$ 204,77)</li>
+                        </ul>
+                        <a href="https://servicos.dpf.gov.br/gru2/gru?nac=1&rec=9" target="_blank" class="btn btn-sm btn-outline-success">
+                            <i class="bi bi-cash-stack me-1"></i> Gerar Guia GRU Online
+                        </a>
+                        </div>
+
+                        <!-- Passo 4 -->
+                        <div class="p-3 border rounded bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-primary">Etapa 4</span>
+                            <small class="text-muted fw-bold"><i class="bi bi-calendar-check me-1"></i> Agendamento</small>
+                        </div>
+                        <h6 class="fw-bold mb-1">Agendamento Presencial</h6>
+                        <p class="small text-muted mb-2">Após preencher o formulário, acesse o sistema de agendamento e selecione exatamente as seguintes opções:</p>
+                        <div class="p-2 border rounded bg-light small mb-2">
+                            <div><strong>UF:</strong> SP</div>
+                            <div><strong>Posto de Atendimento:</strong> <code>PEP/SCL/DPF/AQA/SP</code> (Delegacia em Araraquara/SP)</div>
+                        </div>
+                        <a href="https://servicos.dpf.gov.br/agenda-web/acessar" target="_blank" class="btn btn-sm btn-fzea">
+                            <i class="bi bi-calendar-event me-1"></i> Agendar Atendimento no Sistema
+                        </a>
+                        </div>
+
+                        <!-- Passo 5 -->
+                        <div class="p-3 border rounded bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-primary">Etapa 5</span>
+                            <small class="text-muted fw-bold"><i class="bi bi-geo-alt me-1"></i> Atendimento</small>
+                        </div>
+                        <h6 class="fw-bold mb-1">Comparecimento em Araraquara / SP</h6>
+                        <p class="small text-muted mb-1">Vá ao posto no dia e horário agendados portando todos os documentos originais, formulários impressos e comprovante da GRU paga.</p>
+                        <p class="small text-danger fw-semibold mb-2">* O transporte de Pirassununga até Araraquara é de responsabilidade do estudante.</p>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <a href="https://maps.google.com/?q=Av.+Maria+Antonia+Camargo+de+Oliveira,+3013,+Araraquara+-+SP" target="_blank" class="btn btn-sm btn-outline-success">
+                            <i class="bi bi-map-fill me-1"></i> Ver Endereço da PF no Google Maps
+                            </a>
+                            <a href="mailto:dpf.cm.aqa.srsp@dpf.gov.br" class="btn btn-sm btn-outline-dark">
+                            <i class="bi bi-envelope-fill me-1"></i> E-mail PF Araraquara
+                            </a>
+                        </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Alerta Acadêmico -->
+                    <div class="alert alert-danger mt-3 mb-0 small">
+                        <i class="bi bi-exclamation-triangle-fill me-1"></i> <strong>Atenção:</strong> Documentos estrangeiros devem estar legalizados ou apostilados (e com tradução juramentada quando exigida). A FZEA/USP não realiza ou mantém a matrícula de alunos em situação irregular ou com visto de turista.
+                    </div>
+
+                    </div>
+                </div>
+                </div>
+
+                <!-- ==================== ITEM 5.2 ==================== -->
+                <div class="accordion-item border border-primary border-opacity-25 rounded-3 mb-3 overflow-hidden" id="sec5-2">
+                <h2 class="accordion-header" id="heading5-2">
+                    <button class="accordion-button collapsed bg-light fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5-2" aria-expanded="false" aria-controls="collapse5-2">
+                    <i class="bi bi-file-earmark-person-fill me-2 fs-5"></i> 5.2. CPF (Cadastro de Pessoa Física)
+                    </button>
+                </h2>
+                <div id="collapse5-2" class="accordion-collapse collapse" aria-labelledby="heading5-2" data-bs-parent="#accordionSec5">
+                    <div class="accordion-body bg-light">
+                    <p class="small text-muted mb-3">
+                        O CPF é um documento fundamental no Brasil, necessário para abrir conta bancária, comprar um chip de celular, realizar compras online e assinar contratos de aluguel.
+                    </p>
+                    <div>
+                        <a href="https://www.gov.br/receitafederal/pt-br" target="_blank" class="btn btn-outline-success btn-sm">
+                        <i class="bi bi-box-arrow-up-right me-1"></i> Solicitar CPF na Receita Federal
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+                <!-- ==================== ITEM 5.3 ==================== -->
+                <div class="accordion-item border border-primary border-opacity-25 rounded-3 mb-3 overflow-hidden" id="sec5-3">
+                <h2 class="accordion-header" id="heading5-3">
+                    <button class="accordion-button collapsed bg-light fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5-3" aria-expanded="false" aria-controls="collapse5-3">
+                    <i class="bi bi-card-text me-2 fs-5"></i> 5.3. Cartão SUS (Meu SUS Digital)
+                    </button>
+                </h2>
+                <div id="collapse5-3" class="accordion-collapse collapse" aria-labelledby="heading5-3" data-bs-parent="#accordionSec5">
+                    <div class="accordion-body bg-light">
+                    <p class="small text-muted mb-3">
+                        Garante acesso gratuito ao Sistema Único de Saúde (SUS) no Brasil para consultas, atendimentos de emergência, vacinação e retirada de medicamentos.
+                    </p>
+                    <div>
+                        <a href="https://meususdigital.saude.gov.br/" target="_blank" class="btn btn-outline-success btn-sm">
+                        <i class="bi bi-box-arrow-up-right me-1"></i> Acessar Meu SUS Digital
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+            </div>`
+          }, 
+          {
+            id: "sec6",
+            icon: "bi-wifi",
+            title: "6. Wi-Fi e E-mail USP",
+            content: `<p>Todo aluno recebe um e-mail institucional (<code>nome@usp.br</code>) para acesso às plataformas oficiais (JúpiterWeb, Moodle e e-Aulas).</p>
+            <p>Rede Wi-Fi oficial no campus: <strong>Eduroam</strong> (utilizar número USP e senha única).</p>`
+          },
+          {
+            id: "sec7",
+            icon: "bi-mortarboard",
+            title: "7. Vida Acadêmica",
+            content: `<ul>
+              <li><strong>JúpiterWeb:</strong> Matrículas, emissão de histórico e notas.</li>
+              <li><strong>Moodle / e-Aulas:</strong> Ambientes virtuais das disciplinas.</li>
+            </ul>
+            <p><strong>Média mínima de aprovação:</strong> 5,0 | <strong>Frequência mínima:</strong> 70%.</p>`
+          },
+          {
+            id: "sec8",
+            icon: "bi-geo-alt",
+            title: "8. Estrutura do Campus",
+            content: `<p>O campus oferece Biblioteca Central, Restaurante Universitário (RU com refeições acessíveis no Prédio Central), transporte circular interno gratuito e Unidade Básica de Saúde (UBAS).</p>`
+          },
+          {
+            id: "sec9",
+            icon: "bi-people",
+            title: "9. Organizações Estudantis",
+            content: `<p>A FZEA conta com Centro Acadêmico (CA), Associação Atlética, Empresa Júnior (Qualimentos Jr.), grupos de PET e a Associação das Repúblicas (ARP).</p>`
+          },
+          {
+            id: "sec10",
+            icon: "bi-telephone-option",
+            title: "10. Contatos Importantes",
+            content: `<div class="table-responsive">
+              <table class="table table-bordered table-striped align-middle">
+                <thead class="table-dark">
+                  <tr><th>Setor</th><th>Contato</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>Internacionalização (CRInt)</td><td>intfzea@usp.br | (19) 3565-4002</td></tr>
+                  <tr><td>Serviço de Graduação</td><td>graduacaofzea@usp.br | (19) 3565-6666</td></tr>
+                  <tr><td>Biblioteca Central</td><td>biblioteca@fzea.usp.br | (19) 3565-4011</td></tr>
+                  <tr><td>Suporte TI</td><td>informatica@fzea.usp.br | (19) 3565-6643</td></tr>
+                  <tr><td>Saúde (UBAS)</td><td>(19) 3565-6659</td></tr>
+                </tbody>
+              </table>
+            </div>`
+          }
+        ]
+      },
+      en: {
+        headerSub: "Interactive Student Guide - FZEA/USP",
+        cardTitle: "FZEA Student Guide",
+        labelSelect: "Go to Section:",
+        selectPlaceholder: "Select a section...",
+        mapPdfLink: "https://drive.google.com/file/d/1-xGA6qtZFGth5XRXHVabSdrd_a3YOm8j/preview",
+        sections: [
+          {
+            id: "sec1",
+            icon: "bi-emoji-smile",
+            title: "1. Welcome to FZEA",
+            content: `<p>Welcome to the School of Animal Science and Food Engineering at the University of São Paulo (FZEA/USP)!</p>
+            <p>Located in Pirassununga (SP), FZEA offers a welcoming environment with modern infrastructure and strong integration between teaching, research, and community outreach.</p>
+            <p>Our mission is to train ethical professionals committed to sustainable development and the transformation of society through science and technology.</p>`
+          },
+          {
+            id: "sec2",
+            icon: "bi-building",
+            title: "2. About FZEA and USP",
+            content: `<p>FZEA offers degrees in Food Engineering, Biosystems Engineering, Veterinary Medicine, and Animal Science. USP is Brazil's largest public university, founded in 1934.</p>`
+          },
+          {
+            id: "sec3",
+            icon: "bi-bus-front",
+            title: "3. How to Arrive at FZEA",
+            content: `<p>FZEA is located in Pirassununga (SP), approximately 210 km from the state capital.</p>
+            <ul>
+                <li><strong>From SP City:</strong> Tietê Bus Station → Pirassununga (Viação Piracicabana or Cometa). Travel time: ~3h30.</li>
+                <li><strong>From Guarulhos Airport (GRU):</strong> Airport Bus Service to Tietê Terminal, then bus to Pirassununga.</li>
+                <li><strong>From Viracopos Airport (Campinas):</strong> Direct ride-hailing app (~1h30).</li>
+            </ul>
+            <div class="alert alert-info py-2"><i class="bi bi-info-circle me-1"></i><strong>Tip:</strong> Arrive 5 days in advance to settle in and organize your paperwork.</div>
+    
+             <div class="mt-3">
+                 <a href="https://maps.google.com/?q=FZEA+USP+Pirassununga" target="_blank" class="btn btn-fzea btn-sm">
+                    <i class="bi bi-geo-alt-fill me-1"></i> View Location on Google Maps
+                 </a>
+            </div>`
+  },
+          {
+            id: "sec4",
+            icon: "bi-house-heart",
+            title: "4. Student Housing",
+            content: `<p>The International Office reserves a spot in student housing for the international student's <strong>first 15 days</strong>. After this period, the student must arrange off-campus housing.</p>
+            <p>There is a daily fee per person for shared rooms (includes bed linen and towels).</p>
+            <p><strong>Check-in:</strong> At the International Office (7:00 AM to 11:30 AM and 1:00 PM to 4:30 PM). Arrivals outside these hours must pick up the key at the Central Building reception.</p>`
+          },
+          {
+            id: "sec5",
+            icon: "bi-card-checklist",
+            title: "5. Registration & Documentation",
+            content: `<p class="mb-3">Click on the items below to expand and view detailed guidance for each document:</p>
+
+            <!-- Accordion for Section 5 (EN) -->
+            <div class="accordion" id="accordionSec5EN">
+                <!-- ==================== ITEM 5.1 ==================== -->
+                <div class="accordion-item border border-primary border-opacity-25 rounded-3 mb-3 overflow-hidden" id="sec5-1">
+                <h2 class="accordion-header" id="heading5-1-en">
+                    <button class="accordion-button collapsed bg-light fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5-1-en" aria-expanded="false" aria-controls="collapse5-1-en">
+                    <i class="bi bi-shield-check me-2 fs-5"></i> 5.1. Federal Police Registration (CRNM)
+                    </button>
+                </h2>
+                <div id="collapse5-1-en" class="accordion-collapse collapse" aria-labelledby="heading5-1-en" data-bs-parent="#accordionSec5EN">
+                    <div class="accordion-body bg-light pt-2">
+
+                    <!-- Deadline Alert -->
+                    <div class="alert alert-warning border-start border-4 border-warning mb-3">
+                        <div class="d-flex align-items-center mb-1">
+                        <i class="bi bi-clock-history fs-4 me-2 text-dark"></i>
+                        <strong>Strict Deadline: 90 Days</strong>
+                        </div>
+                        <small class="d-block">You have up to <strong>90 days</strong> after your first entry into Brazil to register with the Federal Police. After this period, your status will become irregular.</small>
+                    </div>
+
+                    <!-- Step-by-step Process -->
+                    <div class="d-flex flex-column gap-3">
+
+                        <!-- Step 1 -->
+                        <div class="p-3 border rounded bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-primary">Step 1</span>
+                            <small class="text-muted fw-bold"><i class="bi bi-folder-check me-1"></i> Documentation</small>
+                        </div>
+                        <h6 class="fw-bold mb-1">Gather Documents & Checklist</h6>
+                        <p class="small text-muted mb-2">Access the GOV.BR portal, select your registration type (<strong>VITEM IV</strong> for visa-holding students or <strong>Mercosur</strong>), and download the official requirements checklist.</p>
+                        <a href="https://www.gov.br/pt-br/servicos/registrar-se-como-estrangeiro-no-brasil" target="_blank" class="btn btn-sm btn-outline-primary">
+                            <i class="bi bi-file-earmark-pdf me-1"></i> Access GOV.BR Checklist
+                        </a>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="p-3 border rounded bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-primary">Step 2</span>
+                            <small class="text-muted fw-bold"><i class="bi bi-pencil-square me-1"></i> Application Form</small>
+                        </div>
+                        <h6 class="fw-bold mb-1">Fill Out the Online Form</h6>
+                        <p class="small text-muted mb-2">Complete the official Federal Police form carefully following these tips:</p>
+                        <ul class="small mb-2 ps-3 text-muted">
+                            <li><strong>Main Occupation:</strong> <code>930 - Student</code> (or <code>78 - Professor</code> for researchers).</li>
+                            <li><strong>Parents' Names:</strong> Fill in full names of both father and mother.</li>
+                            <li><strong>Port of Entry:</strong> Select your arrival location (GRU, Viracopos, Congonhas, or Port).</li>
+                        </ul>
+
+                        <!-- Institutional Address Box -->
+                        <div class="p-2 border rounded bg-light small mb-2">
+                            <strong class="text-primary d-block mb-1"><i class="bi bi-building me-1"></i> Institutional Address Data (FZEA/USP):</strong>
+                            <div><strong>Establishment Name:</strong> FZEA/USP</div>
+                            <div><strong>Address:</strong> Av. Duque de Caxias Norte, 225 - Campus Fernando Costa</div>
+                            <div><strong>District / City:</strong> Jardim Elite – Pirassununga / SP | <strong>Zip Code (CEP):</strong> 13635-900</div>
+                            <div><strong>Phone:</strong> +55 19 3565-6752</div>
+                        </div>
+                        <a href="https://servicos.dpf.gov.br/gru2/gru?nac=1&rec=9" target="_blank" class="btn btn-sm btn-outline-success">
+                            <i class="bi bi-card-list me-1"></i> Online Application Form
+                        </a>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="p-3 border rounded bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-primary">Step 3</span>
+                            <small class="text-muted fw-bold"><i class="bi bi-receipt me-1"></i> Fee Payment</small>
+                        </div>
+                        <h6 class="fw-bold mb-1">Pay the GRU Fee</h6>
+                        <p class="small text-muted mb-2">Generate the Union Collection Guide (GRU) and pay it at any bank or via online banking before your appointment date:</p>
+                        <ul class="small mb-2 ps-3 text-muted">
+                            <li><strong>VITEM IV:</strong> Code <code>140120</code> — R$ 204.77</li>
+                            <li><strong>MERCOSUR:</strong> Code <code>140066</code> (R$ 168.13) + Code <code>140120</code> (R$ 204.77)</li>
+                        </ul>
+                        <a href="https://servicos.dpf.gov.br/gru2/gru?nac=1&rec=9" target="_blank" class="btn btn-sm btn-outline-success">
+                            <i class="bi bi-cash-stack me-1"></i> Generate GRU Payment Slip
+                        </a>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="p-3 border rounded bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-primary">Step 4</span>
+                            <small class="text-muted fw-bold"><i class="bi bi-calendar-check me-1"></i> Booking</small>
+                        </div>
+                        <h6 class="fw-bold mb-1">Book an In-Person Appointment</h6>
+                        <p class="small text-muted mb-2">After filling out the form, access the booking system and select these exact location options:</p>
+                        <div class="p-2 border rounded bg-light small mb-2">
+                            <div><strong>State (UF):</strong> SP</div>
+                            <div><strong>Service Unit:</strong> <code>PEP/SCL/DPF/AQA/SP</code> (Federal Police Station in Araraquara/SP)</div>
+                        </div>
+                        <a href="https://servicos.dpf.gov.br/agenda-web/acessar" target="_blank" class="btn btn-sm btn-fzea">
+                            <i class="bi bi-calendar-event me-1"></i> Book Appointment in System
+                        </a>
+                        </div>
+
+                        <!-- Step 5 -->
+                        <div class="p-3 border rounded bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-primary">Step 5</span>
+                            <small class="text-muted fw-bold"><i class="bi bi-geo-alt me-1"></i> Attendance</small>
+                        </div>
+                        <h6 class="fw-bold mb-1">In-Person Attendance in Araraquara / SP</h6>
+                        <p class="small text-muted mb-1">Go to the police station on the scheduled day and time carrying all original documents, printed forms, and proof of GRU payment.</p>
+                        <p class="small text-danger fw-semibold mb-2">* Transportation from Pirassununga to Araraquara is the student's responsibility.</p>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <a href="https://maps.google.com/?q=Av.+Maria+Antonia+Camargo+de+Oliveira,+3013,+Araraquara+-+SP" target="_blank" class="btn btn-sm btn-outline-success">
+                            <i class="bi bi-map-fill me-1"></i> Open Location in Google Maps
+                            </a>
+                            <a href="mailto:dpf.cm.aqa.srsp@dpf.gov.br" class="btn btn-sm btn-outline-dark">
+                            <i class="bi bi-envelope-fill me-1"></i> Email PF Araraquara
+                            </a>
+                        </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Academic Warning -->
+                    <div class="alert alert-danger mt-3 mb-0 small">
+                        <i class="bi bi-exclamation-triangle-fill me-1"></i> <strong>Important:</strong> Foreign documents must be legalized or apostilled (and sworn-translated into Portuguese when required). FZEA/USP cannot register or maintain the registration of students in irregular status or on tourist visas.
+                    </div>
+
+                    </div>
+                </div>
+                </div>
+
+                <!-- ==================== ITEM 5.2 ==================== -->
+                <div class="accordion-item border border-primary border-opacity-25 rounded-3 mb-3 overflow-hidden" id="sec5-2">
+                <h2 class="accordion-header" id="heading5-2-en">
+                    <button class="accordion-button collapsed bg-light fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5-2-en" aria-expanded="false" aria-controls="collapse5-2-en">
+                    <i class="bi bi-file-earmark-person-fill me-2 fs-5"></i> 5.2. CPF (Taxpayer Identification Number)
+                    </button>
+                </h2>
+                <div id="collapse5-2-en" class="accordion-collapse collapse" aria-labelledby="heading5-2-en" data-bs-parent="#accordionSec5EN">
+                    <div class="accordion-body bg-light">
+                    <p class="small text-muted mb-3">
+                        The CPF is an essential tax document in Brazil, required to open bank accounts, buy a local SIM card, shop online, and sign apartment leases.
+                    </p>
+                    <div>
+                        <a href="https://www.gov.br/receitafederal/pt-br" target="_blank" class="btn btn-outline-success btn-sm">
+                        <i class="bi bi-box-arrow-up-right me-1"></i> Request CPF at Receita Federal
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+                <!-- ==================== ITEM 5.3 ==================== -->
+                <div class="accordion-item border border-primary border-opacity-25 rounded-3 mb-3 overflow-hidden" id="sec5-3">
+                <h2 class="accordion-header" id="heading5-3-en">
+                    <button class="accordion-button collapsed bg-light fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5-3-en" aria-expanded="false" aria-controls="collapse5-3-en">
+                    <i class="bi bi-card-text me-2 fs-5"></i> 5.3. SUS Healthcare Card (Meu SUS Digital)
+                    </button>
+                </h2>
+                <div id="collapse5-3-en" class="accordion-collapse collapse" aria-labelledby="heading5-3-en" data-bs-parent="#accordionSec5EN">
+                    <div class="accordion-body bg-light">
+                    <p class="small text-muted mb-3">
+                        Grants free access to Brazil's public Unified Health System (SUS) for medical consultations, emergency care, vaccinations, and free essential medicines.
+                    </p>
+                    <div>
+                        <a href="https://meususdigital.saude.gov.br/" target="_blank" class="btn btn-outline-success btn-sm">
+                        <i class="bi bi-box-arrow-up-right me-1"></i> Access Meu SUS Digital
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+            </div>`
+          },
+          
+          {
+            id: "sec6",
+            icon: "bi-wifi",
+            title: "6. Wi-Fi & Email Access",
+            content: `<p>Official USP email address (<code>name@usp.br</code>) provides access to student systems and the <strong>Eduroam</strong> Wi-Fi network.</p>`
+          },
+          {
+            id: "sec7",
+            icon: "bi-mortarboard",
+            title: "7. Academic Rules",
+            content: `<p>Passing grade: 5.0 | Minimum attendance requirement: 70%. Systems: JúpiterWeb and Moodle.</p>`
+          },
+          {
+            id: "sec8",
+            icon: "bi-geo-alt",
+            title: "8. Campus Facilities",
+            content: `<p>Includes Central Library, University Restaurant, free internal campus shuttle bus, and Health Unit (UBAS).</p>`
+          },
+          {
+            id: "sec9",
+            icon: "bi-people",
+            title: "9. Student Organizations",
+            content: `<p>Includes Student Center, Athletic Association, Junior Company (Qualimentos Jr.), and PET academic groups.</p>`
+          },
+          {
+            id: "sec10",
+            icon: "bi-telephone-option",
+            title: "10. Important Contacts",
+            content: `<p>International Office: intfzea@usp.br | +55 19 3565-4002<br>Undergraduate Office: graduacaofzea@usp.br</p>`
+          }
+        ]
+      },
+      es: {
+        headerSub: "Guía del Estudiante Interactiva - FZEA/USP",
+        cardTitle: "Guía del Estudiante FZEA",
+        labelSelect: "Ir a la Sección:",
+        selectPlaceholder: "Seleccione una sección...",
+        mapPdfLink: "https://drive.google.com/file/d/SEU_ID_DO_ARQUIVO_ES/preview",
+        sections: [
+          {
+            id: "sec1",
+            icon: "bi-emoji-smile",
+            title: "1. Bienvenida a la FZEA",
+            content: `<p>¡Le damos la más cordial bienvenida a la Facultad de Zootecnia e Ingeniería de Alimentos de la Universidad de São Paulo (FZEA/USP)!</p>
+            <p>Ubicada en la ciudad de Pirassununga (SP), la FZEA ofrece un entorno acogedor, con infraestructura moderna y una fuerte integración entre docencia, investigación y extensión.</p>
+            <p>Nuestra misión es formar profesionales éticos y comprometidos con el desarrollo sostenible y la transformación de la sociedad a través de la ciencia y la tecnología.</p>`
+          },
+          {
+            id: "sec2",
+            icon: "bi-building",
+            title: "2. Sobre la FZEA y la USP",
+            content: `<p>La FZEA ofrece grados en Ingeniería de Alimentos, Ingeniería de Biosistemas, Medicina Veterinaria y Zootecnia.</p>`
+          },
+          {
+            id: "sec3",
+            icon: "bi-bus-front",
+            title: "3. Cómo Llegar a la FZEA",
+            content: `<p>La FZEA está ubicada en Pirassununga (SP), a unos 210 km de la capital.</p>
+            <ul>
+                <li><strong>Desde São Paulo (Capital):</strong> Terminal Tietê → Pirassununga (Viação Piracicabana o Cometa). Viaje: ~3h30.</li>
+                <li><strong>Desde el Aeropuerto de Guarulhos (GRU):</strong> Airport Bus Service hasta Tietê y autobús a Pirassununga.</li>
+                <li><strong>Desde el Aeropuerto de Viracopos (Campinas):</strong> App de transporte directo (~1h30).</li>
+            </ul>
+                <div class="alert alert-info py-2"><i class="bi bi-info-circle me-1"></i><strong>Consejo:</strong> Llega con 5 días de anticipación para adaptarte y organizar la documentación.</div>
+    
+            <div class="mt-3">
+                <a href="https://maps.google.com/?q=FZEA+USP+Pirassununga" target="_blank" class="btn btn-fzea btn-sm">
+                    <i class="bi bi-geo-alt-fill me-1"></i> Ver Ubicación en Google Maps
+                </a>
+            </div>`
+  },
+          {
+            id: "sec4",
+            icon: "bi-house-heart",
+            title: "4. Alojamiento Estudiantil",
+            content: `<p>La Oficina de Internacionalización reserva una plaza en el alojamiento estudiantil para los <strong>primeros 15 días</strong> del estudiante extranjero. Después de este período, el alumno deberá gestionar su alojamiento fuera del campus.</p>
+            <p>Hay un costo diario por persona para las habitaciones compartidas (incluye ropa de cama y baño).</p>
+            <p><strong>Check-in:</strong> En la Oficina de Internacionalización (07:00 a 11:30 y 13:00 a 16:30). Las llegadas fuera de este horario deben recoger la llave en la recepción del Edificio Central.</p>`
+          },
+          {
+            id: "sec5",
+            icon: "bi-card-checklist",
+            title: "5. Registro y Documentación",
+            content: `<p class="mb-3">Haga clic en los elementos a continuación para desplegar y ver la guía detallada de cada documento:</p>
+
+            <!-- Acordeón Sección 5 (ES) -->
+            <div class="accordion" id="accordionSec5ES">
+
+                <!-- ==================== ITEM 5.1 ==================== -->
+                <div class="accordion-item border border-primary border-opacity-25 rounded-3 mb-3 overflow-hidden" id="sec5-1">
+                <h2 class="accordion-header" id="heading5-1-es">
+                    <button class="accordion-button collapsed bg-light fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5-1-es" aria-expanded="false" aria-controls="collapse5-1-es">
+                    <i class="bi bi-shield-check me-2 fs-5"></i> 5.1. Registro Policía Federal (CRNM)
+                    </button>
+                </h2>
+                <div id="collapse5-1-es" class="accordion-collapse collapse" aria-labelledby="heading5-1-es" data-bs-parent="#accordionSec5ES">
+                    <div class="accordion-body bg-light pt-2">
+
+                    <!-- Alerta de Plazo -->
+                    <div class="alert alert-warning border-start border-4 border-warning mb-3">
+                        <div class="d-flex align-items-center mb-1">
+                        <i class="bi bi-clock-history fs-4 me-2 text-dark"></i>
+                        <strong>Plazo Límite: 90 Días</strong>
+                        </div>
+                        <small class="d-block">Tiene hasta <strong>90 días</strong> después de su primera entrada a Brasil para registrarse en la Policía Federal. Pasado este plazo, quedará en situación irregular.</small>
+                    </div>
+
+                    <!-- Etapas del Proceso -->
+                    <div class="d-flex flex-column gap-3">
+
+                        <!-- Paso 1 -->
+                        <div class="p-3 border rounded bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-primary">Etapa 1</span>
+                            <small class="text-muted fw-bold"><i class="bi bi-folder-check me-1"></i> Documentación</small>
+                        </div>
+                        <h6 class="fw-bold mb-1">Reunir Documentos y Lista de Requisitos</h6>
+                        <p class="small text-muted mb-2">Acceda al portal GOV.BR, seleccione su tipo de registro (<strong>VITEM IV</strong> para estudiantes con visa o <strong>Mercosur</strong>) y descargue la lista oficial de requisitos.</p>
+                        <a href="https://www.gov.br/pt-br/servicos/registrar-se-como-estrangeiro-no-brasil" target="_blank" class="btn btn-sm btn-outline-primary">
+                            <i class="bi bi-file-earmark-pdf me-1"></i> Acceder a Requisitos en GOV.BR
+                        </a>
+                        </div>
+
+                        <!-- Paso 2 -->
+                        <div class="p-3 border rounded bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-primary">Etapa 2</span>
+                            <small class="text-muted fw-bold"><i class="bi bi-pencil-square me-1"></i> Formulario</small>
+                        </div>
+                        <h6 class="fw-bold mb-1">Llenado del Formulario Online</h6>
+                        <p class="small text-muted mb-2">Complete el formulario oficial de la PF con atención a las siguientes recomendaciones:</p>
+                        <ul class="small mb-2 ps-3 text-muted">
+                            <li><strong>Ocupación Principal:</strong> <code>930 - Estudante</code> (o <code>78 - Professor</code> para investigadores).</li>
+                            <li><strong>Filiación:</strong> Complete el nombre completo de ambos padres.</li>
+                            <li><strong>Lugar de Entrada:</strong> Seleccione el punto de llegada (GRU, Viracopos, Congonhas o Puerto).</li>
+                        </ul>
+
+                        <!-- Cuadro de Dirección Institucional -->
+                        <div class="p-2 border rounded bg-light small mb-2">
+                            <strong class="text-primary d-block mb-1"><i class="bi bi-building me-1"></i> Datos para la Dirección Institucional (FZEA/USP):</strong>
+                            <div><strong>Establecimiento:</strong> FZEA/USP</div>
+                            <div><strong>Dirección:</strong> Av. Duque de Caxias Norte, 225 - Campus Fernando Costa</div>
+                            <div><strong>Barrio / Ciudad:</strong> Jardim Elite – Pirassununga / SP | <strong>Código Postal (CEP):</strong> 13635-900</div>
+                            <div><strong>Teléfono:</strong> +55 19 3565-6752</div>
+                        </div>
+                        <a href="https://servicos.dpf.gov.br/gru2/gru?nac=1&rec=9" target="_blank" class="btn btn-sm btn-outline-success">
+                            <i class="bi bi-card-list me-1"></i> Formulario Online
+                        </a>
+                        </div>
+
+                        <!-- Paso 3 -->
+                        <div class="p-3 border rounded bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-primary">Etapa 3</span>
+                            <small class="text-muted fw-bold"><i class="bi bi-receipt me-1"></i> Pago</small>
+                        </div>
+                        <h6 class="fw-bold mb-1">Pago de la Tasa (GRU)</h6>
+                        <p class="small text-muted mb-2">Genere la Guía de Recaudación de la Unión (GRU) y realice el pago en la red bancaria antes de la fecha de su cita presencial:</p>
+                        <ul class="small mb-2 ps-3 text-muted">
+                            <li><strong>VITEM IV:</strong> Código <code>140120</code> — R$ 204,77</li>
+                            <li><strong>MERCOSUR:</strong> Código <code>140066</code> (R$ 168,13) + Código <code>140120</code> (R$ 204,77)</li>
+                        </ul>
+                        <a href="https://servicos.dpf.gov.br/gru2/gru?nac=1&rec=9" target="_blank" class="btn btn-sm btn-outline-success">
+                            <i class="bi bi-cash-stack me-1"></i> Generar Guía GRU Online
+                        </a>
+                        </div>
+
+                        <!-- Paso 4 -->
+                        <div class="p-3 border rounded bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-primary">Etapa 4</span>
+                            <small class="text-muted fw-bold"><i class="bi bi-calendar-check me-1"></i> Cita Previa</small>
+                        </div>
+                        <h6 class="fw-bold mb-1">Reserva de Cita Presencial</h6>
+                        <p class="small text-muted mb-2">Tras llenar el formulario, acceda al sistema de citas y seleccione exactamente las siguientes opciones:</p>
+                        <div class="p-2 border rounded bg-light small mb-2">
+                            <div><strong>Estado (UF):</strong> SP</div>
+                            <div><strong>Puesto de Atención:</strong> <code>PEP/SCL/DPF/AQA/SP</code> (Delegación en Araraquara/SP)</div>
+                        </div>
+                        <a href="https://servicos.dpf.gov.br/agenda-web/acessar" target="_blank" class="btn btn-sm btn-fzea">
+                            <i class="bi bi-calendar-event me-1"></i> Agendar Cita en el Sistema
+                        </a>
+                        </div>
+
+                        <!-- Paso 5 -->
+                        <div class="p-3 border rounded bg-white">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-primary">Etapa 5</span>
+                            <small class="text-muted fw-bold"><i class="bi bi-geo-alt me-1"></i> Atención Presencial</small>
+                        </div>
+                        <h6 class="fw-bold mb-1">Asistencia Presencial en Araraquara / SP</h6>
+                        <p class="small text-muted mb-1">Acuda a la sede en el día y hora agendados con todos los documentos originales, formularios impresos y comprobante de pago de la GRU.</p>
+                        <p class="small text-danger fw-semibold mb-2">* El transporte de Pirassununga a Araraquara es responsabilidad del estudiante.</p>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <a href="https://maps.google.com/?q=Av.+Maria+Antonia+Camargo+de+Oliveira,+3013,+Araraquara+-+SP" target="_blank" class="btn btn-sm btn-outline-success">
+                            <i class="bi bi-map-fill me-1"></i> Ver Dirección en Google Maps
+                            </a>
+                            <a href="mailto:dpf.cm.aqa.srsp@dpf.gov.br" class="btn btn-sm btn-outline-dark">
+                            <i class="bi bi-envelope-fill me-1"></i> Correo PF Araraquara
+                            </a>
+                        </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Alerta Académico -->
+                    <div class="alert alert-danger mt-3 mb-0 small">
+                        <i class="bi bi-exclamation-triangle-fill me-1"></i> <strong>Atención:</strong> Los documentos extranjeros deben estar legalizados o apostillados (y con traducción jurada al portugués cuando corresponda). La FZEA/USP no realiza ni mantiene la matrícula de alumnos en situación irregular o con visa de turista.
+                    </div>
+
+                    </div>
+                </div>
+                </div>
+
+                <!-- ==================== ITEM 5.2 ==================== -->
+                <div class="accordion-item border border-primary border-opacity-25 rounded-3 mb-3 overflow-hidden" id="sec5-2">
+                <h2 class="accordion-header" id="heading5-2-es">
+                    <button class="accordion-button collapsed bg-light fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5-2-es" aria-expanded="false" aria-controls="collapse5-2-es">
+                    <i class="bi bi-file-earmark-person-fill me-2 fs-5"></i> 5.2. CPF (Registro de Persona Física)
+                    </button>
+                </h2>
+                <div id="collapse5-2-es" class="accordion-collapse collapse" aria-labelledby="heading5-2-es" data-bs-parent="#accordionSec5ES">
+                    <div class="accordion-body bg-light">
+                    <p class="small text-muted mb-3">
+                        El CPF es un documento fiscal fundamental en Brasil, necesario para abrir cuentas bancarias, comprar chips de telefonía celular, realizar compras por internet y firmar contratos de alquiler.
+                    </p>
+                    <div>
+                        <a href="https://www.gov.br/receitafederal/pt-br" target="_blank" class="btn btn-outline-success btn-sm">
+                        <i class="bi bi-box-arrow-up-right me-1"></i> Solicitar CPF en Receita Federal
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+                <!-- ==================== ITEM 5.3 ==================== -->
+                <div class="accordion-item border border-primary border-opacity-25 rounded-3 mb-3 overflow-hidden" id="sec5-3">
+                <h2 class="accordion-header" id="heading5-3-es">
+                    <button class="accordion-button collapsed bg-light fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5-3-es" aria-expanded="false" aria-controls="collapse5-3-es">
+                    <i class="bi bi-card-text me-2 fs-5"></i> 5.3. Tarjeta Sanitaria SUS (Meu SUS Digital)
+                    </button>
+                </h2>
+                <div id="collapse5-3-es" class="accordion-collapse collapse" aria-labelledby="heading5-3-es" data-bs-parent="#accordionSec5ES">
+                    <div class="accordion-body bg-light">
+                    <p class="small text-muted mb-3">
+                        Garantiza acceso gratuito al Sistema Único de Salud (SUS) público de Brasil para consultas médicas, atención de urgencias, vacunación y medicamentos esenciales.
+                    </p>
+                    <div>
+                        <a href="https://meususdigital.saude.gov.br/" target="_blank" class="btn btn-outline-success btn-sm">
+                        <i class="bi bi-box-arrow-up-right me-1"></i> Acceder a Meu SUS Digital
+                        </a>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
+            </div>`
+          },
+          {
+            id: "sec6",
+            icon: "bi-wifi",
+            title: "6. Wi-Fi y Correo USP",
+            content: `<p>Acceso a red Eduroam y correo institucional <code>nombre@usp.br</code>.</p>`
+          },
+          {
+            id: "sec7",
+            icon: "bi-mortarboard",
+            title: "7. Vida Académica",
+            content: `<p>Nota mínima de aprobación: 5,0. Asistencia mínima: 70%.</p>`
+          },
+          {
+            id: "sec8",
+            icon: "bi-geo-alt",
+            title: "8. Instalaciones del Campus",
+            content: `<p>Biblioteca, Comedor Universitario, transporte interno gratuito y Centro de Salud.</p>`
+          },
+          {
+            id: "sec9",
+            icon: "bi-people",
+            title: "9. Organizaciones Estudiantiles",
+            content: `<p>Centro Académico, Asociación Atlética y Empresa Júnior (Qualimentos Jr.).</p>`
+          },
+          {
+            id: "sec10",
+            icon: "bi-telephone-option",
+            title: "10. Contactos Útiles",
+            content: `<p>Internacionalización: intfzea@usp.br | +55 19 3565-4002</p>`
+          }
+        ]
+      }
+    };
+
+    let currentLang = 'pt';
+
+    document.addEventListener("DOMContentLoaded", function() {
+      renderContent(currentLang);
+    });
+
+    function setLanguage(lang, btn) {
+      currentLang = lang;
+      document.querySelectorAll('.btn-lang').forEach(b => {
+        b.classList.remove('btn-fzea', 'active');
+        b.classList.add('btn-outline-primary');
+      });
+      btn.classList.remove('btn-outline-primary');
+      btn.classList.add('btn-fzea', 'active');
+
+      renderContent(lang);
+    }
+
+    function abrirAba(idSection) {
+    const secao = document.getElementById(idSection);
+    if (!secao) return;
+
+    // Encontra o elemento collapse do Bootstrap dentro da seção
+    const collapseElem = secao.querySelector('.accordion-collapse') || secao;
+
+    // Se estiver usando Bootstrap 5, abre a aba sanfonada
+    if (collapseElem && window.bootstrap) {
+        const bsCollapse = bootstrap.Collapse.getOrCreateInstance(collapseElem);
+        bsCollapse.show();
+    }
+
+    // Rola a tela suavemente até a aba aberta
+    setTimeout(() => {
+        secao.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 150);
+    }
+
+    function renderContent(lang) {
+      const data = contentData[lang];
+      document.getElementById('headerSub').innerText = data.headerSub;
+      document.getElementById('cardTitle').innerHTML = `<i class="bi bi-journal-bookmark-fill me-2"></i>${data.cardTitle}`;
+      document.getElementById('labelSelect').innerHTML = `<i class="bi bi-funnel me-1"></i>${data.labelSelect}`;
+
+      // Renderiza Select
+      const select = document.getElementById('secaoSelect');
+      select.innerHTML = `<option value="">${data.selectPlaceholder}</option>`;
+
+      // Renderiza Accordion
+      const accordion = document.getElementById('accordionGuia');
+      accordion.innerHTML = '';
+
+      data.sections.forEach((sec, idx) => {
+        // Popula Select
+        select.innerHTML += `<option value="${sec.id}">${sec.title}</option>`;
+
+        // Popula Accordion
+        const isFirst = idx === 0 ? 'show' : '';
+        const isCollapsed = idx === 0 ? '' : 'collapsed';
+
+        accordion.innerHTML += `
+          <div class="accordion-item" id="${sec.id}">
+            <h2 class="accordion-header">
+              <button class="accordion-button ${isCollapsed}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse_${sec.id}">
+                <i class="bi ${sec.icon} me-2 text-primary"></i> ${sec.title}
+              </button>
+            </h2>
+            <div id="collapse_${sec.id}" class="accordion-collapse collapse ${isFirst}" data-bs-parent="#accordionGuia">
+              <div class="accordion-body">
+                ${sec.content}
+              </div>
+            </div>
+          </div>
+        `;
+      });
+    }
+
+    function rolarParaSecao() {
+      const secId = document.getElementById('secaoSelect').value;
+      if (!secId) return;
+
+      const targetEl = document.getElementById(secId);
+      if (targetEl) {
+        const collapseEl = document.getElementById(`collapse_${secId}`);
+        if (collapseEl) {
+          const bsCollapse = new bootstrap.Collapse(collapseEl, { toggle: false });
+          bsCollapse.show();
+        }
+        targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+  </script>
+  <!-- Botão Flutuante do Mapa -->
+    <a id="btn-mapa-flutuante" href="#" target="_blank" class="btn-mapa-flutuante" title="Mapa do Campus">
+     🗺️
+    </a>
+</body>
+</html>
