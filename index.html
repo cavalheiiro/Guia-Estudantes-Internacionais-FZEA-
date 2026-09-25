@@ -305,7 +305,7 @@
                         </div>
                         <h6 class="fw-bold mb-1">Reunir Documentos & Checklist</h6>
                         <p class="small text-muted mb-2">Acesse o portal do GOV.BR, selecione o tipo do seu registro (<strong>VITEM IV</strong> para estudantes com visto ou <strong>Mercosul</strong>) e baixe o checklist oficial de exigências.</p>
-                        <a href="https://www.gov.br/pt-br/servicos/registrar-se-como-estrangeiro-no-brasil" target="_blank" class="btn btn-sm btn-outline-primary">
+                        <a href="https://www.gov.br/pf/pt-br/assuntos/imigracao/registrar-se-como-estrangeiro-no-brasil/registro-de-imigrante-detentor-de-visto" target="_blank" class="btn btn-sm btn-outline-primary">
                             <i class="bi bi-file-earmark-pdf me-1"></i> Acessar Checklist no GOV.BR
                         </a>
                         </div>
@@ -332,7 +332,7 @@
                             <div><strong>Bairro / Cidade:</strong> Jardim Elite – Pirassununga / SP | <strong>CEP:</strong> 13635-900</div>
                             <div><strong>Telefone:</strong> +55 19 3565-6752</div>
                         </div>
-                        <a href="https://servicos.dpf.gov.br/gru2/gru?nac=1&rec=9" target="_blank" class="btn btn-sm btn-outline-success">
+                        <a href="https://servicos.pf.gov.br/sismigra-internet/faces/publico/tipoSolicitacao/solicitarRegistroEmissaoCie.seam?" target="_blank" class="btn btn-sm btn-outline-success">
                             <i class="bi bi-card-list me-1"></i> Formulário Online
                         </a>
                         </div>
@@ -349,7 +349,7 @@
                             <li><strong>VITEM IV:</strong> Código <code>140120</code> — R$ 204,77</li>
                             <li><strong>MERCOSUL:</strong> Código <code>140066</code> (R$ 168,13) + Código <code>140120</code> (R$ 204,77)</li>
                         </ul>
-                        <a href="https://servicos.dpf.gov.br/gru2/gru?nac=1&rec=9" target="_blank" class="btn btn-sm btn-outline-success">
+                        <a href="https://servicos.pf.gov.br/gru2/gru?nac=1&rec=9" target="_blank" class="btn btn-sm btn-outline-success">
                             <i class="bi bi-cash-stack me-1"></i> Gerar Guia GRU Online
                         </a>
                         </div>
@@ -366,7 +366,7 @@
                             <div><strong>UF:</strong> SP</div>
                             <div><strong>Posto de Atendimento:</strong> <code>PEP/SCL/DPF/AQA/SP</code> (Delegacia em Araraquara/SP)</div>
                         </div>
-                        <a href="https://servicos.dpf.gov.br/agenda-web/acessar" target="_blank" class="btn btn-sm btn-fzea">
+                        <a href="https://servicos.pf.gov.br/agenda-web/acessar" target="_blank" class="btn btn-sm btn-fzea">
                             <i class="bi bi-calendar-event me-1"></i> Agendar Atendimento no Sistema
                         </a>
                         </div>
@@ -449,8 +449,28 @@
             id: "sec6",
             icon: "bi-wifi",
             title: "6. Wi-Fi e E-mail USP",
-            content: `<p>Todo aluno recebe um e-mail institucional (<code>nome@usp.br</code>) para acesso às plataformas oficiais (JúpiterWeb, Moodle e e-Aulas).</p>
-            <p>Rede Wi-Fi oficial no campus: <strong>Eduroam</strong> (utilizar número USP e senha única).</p>`
+            content: `<div class="alert alert-warning border-start border-4 border-warning mb-3">
+                        <div class="d-flex align-items-center mb-1">
+                        <i class="bi bi-exclamation-triangle-fill fs-4 me-2 text-dark"></i>
+                        <strong>E-mail Alternativo</strong>
+                        </div>
+                        <p class="d-block"><small>O e-mail alternativo é o endereço eletrônico pelo qual você realizou o contato com a FZEA, necessário para a ativação do seu e-mail USP.</small>
+                                          <small><p>Caso receba um aviso informando que o e-mail não está cadastrado:</p></small>
+                                          <small><p>Alunos de Graduação: Entrar em contato com a CRInt.</p></small>
+                                          <small><p>Alunos de Pós-Graduação: Procurar o Serviço de Pós-Graduação.</p></small>
+                    </div>
+                        <p>Todo aluno recebe um e-mail institucional da USP, do tipo <code>nome@usp.br</code>, utilizado para receber comunicados oficiais, acessar plataformas como e-Aulas, Moodle e Google Workspace (Drive, Agenda, Meet, etc.).</p>
+                        <p>Além disso, todos os alunos da FZEA têm acesso à rede sem fio Eduroam, disponível em todo o campus. Para conectar,atravez de um smartphone é necessário usar o login USP (número USP + senha única).</p>
+                        <p>Para dispositivos como Notebooks e Desktops, é necessário realizar o download do acesso Eduroam e usar o login USP (número USP + senha única).</p>
+                        <p>Rede Wi-Fi oficial no campus: <strong>Eduroam</strong> (utilizar número USP e senha única).</p>
+                    <div class="d-flex flex-wrap gap-2 mt-3">
+                      <a href="https://id.usp.br/primeiro-acesso" target="_blank" class="btn btn-outline-primary btn-sm">
+                        <i class="bi bi-envelope-fill me-1"></i> Criar E-mail USP
+                      </a>
+                      <a href="https://cat.eduroam.org/?idp=761" target="_blank" class="btn btn-outline-primary btn-sm">
+                        <i class="bi bi-wifi me-1"></i>Acesso Eduroam Desktop
+                      </a>
+                  </div>`
           },
           {
             id: "sec7",
@@ -580,7 +600,7 @@
                         </div>
                         <h6 class="fw-bold mb-1">Gather Documents & Checklist</h6>
                         <p class="small text-muted mb-2">Access the GOV.BR portal, select your registration type (<strong>VITEM IV</strong> for visa-holding students or <strong>Mercosur</strong>), and download the official requirements checklist.</p>
-                        <a href="https://www.gov.br/pt-br/servicos/registrar-se-como-estrangeiro-no-brasil" target="_blank" class="btn btn-sm btn-outline-primary">
+                        <a href="https://www.gov.br/pf/pt-br/assuntos/imigracao/registrar-se-como-estrangeiro-no-brasil/registro-de-imigrante-detentor-de-visto" target="_blank" class="btn btn-sm btn-outline-primary">
                             <i class="bi bi-file-earmark-pdf me-1"></i> Access GOV.BR Checklist
                         </a>
                         </div>
@@ -607,7 +627,7 @@
                             <div><strong>District / City:</strong> Jardim Elite – Pirassununga / SP | <strong>Zip Code (CEP):</strong> 13635-900</div>
                             <div><strong>Phone:</strong> +55 19 3565-6752</div>
                         </div>
-                        <a href="https://servicos.dpf.gov.br/gru2/gru?nac=1&rec=9" target="_blank" class="btn btn-sm btn-outline-success">
+                        <a href="https://servicos.pf.gov.br/sismigra-internet/faces/publico/tipoSolicitacao/solicitarRegistroEmissaoCie.seam?" target="_blank" class="btn btn-sm btn-outline-success">
                             <i class="bi bi-card-list me-1"></i> Online Application Form
                         </a>
                         </div>
@@ -624,7 +644,7 @@
                             <li><strong>VITEM IV:</strong> Code <code>140120</code> — R$ 204.77</li>
                             <li><strong>MERCOSUR:</strong> Code <code>140066</code> (R$ 168.13) + Code <code>140120</code> (R$ 204.77)</li>
                         </ul>
-                        <a href="https://servicos.dpf.gov.br/gru2/gru?nac=1&rec=9" target="_blank" class="btn btn-sm btn-outline-success">
+                        <a href="https://servicos.pf.gov.br/gru2/gru?nac=1&rec=9" target="_blank" class="btn btn-sm btn-outline-success">
                             <i class="bi bi-cash-stack me-1"></i> Generate GRU Payment Slip
                         </a>
                         </div>
@@ -641,7 +661,7 @@
                             <div><strong>State (UF):</strong> SP</div>
                             <div><strong>Service Unit:</strong> <code>PEP/SCL/DPF/AQA/SP</code> (Federal Police Station in Araraquara/SP)</div>
                         </div>
-                        <a href="https://servicos.dpf.gov.br/agenda-web/acessar" target="_blank" class="btn btn-sm btn-fzea">
+                        <a href="https://servicos.pf.gov.br/agenda-web/acessar" target="_blank" class="btn btn-sm btn-fzea">
                             <i class="bi bi-calendar-event me-1"></i> Book Appointment in System
                         </a>
                         </div>
@@ -724,8 +744,29 @@
           {
             id: "sec6",
             icon: "bi-wifi",
-            title: "6. Wi-Fi & Email Access",
-            content: `<p>Official USP email address (<code>name@usp.br</code>) provides access to student systems and the <strong>Eduroam</strong> Wi-Fi network.</p>`
+            title: "6. Wi-Fi and USP Email",
+            content: `<div class="alert alert-warning border-start border-4 border-warning mb-3">
+                        <div class="d-flex align-items-center mb-1">
+                          <i class="bi bi-exclamation-triangle-fill fs-4 me-2 text-dark"></i>
+                          <strong>Alternative Email</strong>
+                        </div>
+                        <p class="d-block"><small>The alternative email is the address you previously used to contact FZEA, required to activate your USP email.</small></p>
+                        <small><p class="mb-1">If you receive a notice stating that the email is not registered:</p></small>
+                        <small><p class="mb-1">Undergraduate Students: Contact CRInt.</p></small>
+                        <small><p class="mb-0">Graduate Students: Contact the Graduate Office.</p></small>
+                      </div>
+                      <p>Every student receives an official USP institutional email (e.g., <code>name@usp.br</code>), used to receive official communications and access platforms such as e-Aulas, Moodle, and Google Workspace (Drive, Calendar, Meet, etc.).</p>
+                      <p>Additionally, all FZEA students have access to the Eduroam Wi-Fi network throughout the campus. To connect via smartphone, use your USP login credentials (USP number + single password).</p>
+                      <p>For devices such as laptops and desktops, you need to download the Eduroam setup file and use your USP login credentials (USP number + single password).</p>
+                      <p>Official campus Wi-Fi network: <strong>Eduroam</strong> (use USP number and single password).</p>
+                      <div class="d-flex flex-wrap gap-2 mt-3">
+                        <a href="https://id.usp.br/primeiro-acesso" target="_blank" class="btn btn-outline-primary btn-sm">
+                          <i class="bi bi-envelope-fill me-1"></i> Create USP Email
+                        </a>
+                        <a href="https://cat.eduroam.org/?idp=761" target="_blank" class="btn btn-outline-primary btn-sm">
+                          <i class="bi bi-wifi me-1"></i> Eduroam Desktop Access
+                        </a>
+                      </div>`
           },
           {
             id: "sec7",
@@ -758,7 +799,7 @@
         cardTitle: "Guía del Estudiante FZEA",
         labelSelect: "Ir a la Sección:",
         selectPlaceholder: "Seleccione una sección...",
-        mapPdfLink: "https://drive.google.com/file/d/SEU_ID_DO_ARQUIVO_ES/preview",
+        mapPdfLink: "https://drive.google.com/file/d/1-xGA6qtZFGth5XRXHVabSdrd_a3YOm8j/preview",
         sections: [
           {
             id: "sec1",
@@ -839,7 +880,7 @@
                         </div>
                         <h6 class="fw-bold mb-1">Reunir Documentos y Lista de Requisitos</h6>
                         <p class="small text-muted mb-2">Acceda al portal GOV.BR, seleccione su tipo de registro (<strong>VITEM IV</strong> para estudiantes con visa o <strong>Mercosur</strong>) y descargue la lista oficial de requisitos.</p>
-                        <a href="https://www.gov.br/pt-br/servicos/registrar-se-como-estrangeiro-no-brasil" target="_blank" class="btn btn-sm btn-outline-primary">
+                        <a href="https://www.gov.br/pf/pt-br/assuntos/imigracao/registrar-se-como-estrangeiro-no-brasil/registro-de-imigrante-detentor-de-visto" target="_blank" class="btn btn-sm btn-outline-primary">
                             <i class="bi bi-file-earmark-pdf me-1"></i> Acceder a Requisitos en GOV.BR
                         </a>
                         </div>
@@ -866,7 +907,7 @@
                             <div><strong>Barrio / Ciudad:</strong> Jardim Elite – Pirassununga / SP | <strong>Código Postal (CEP):</strong> 13635-900</div>
                             <div><strong>Teléfono:</strong> +55 19 3565-6752</div>
                         </div>
-                        <a href="https://servicos.dpf.gov.br/gru2/gru?nac=1&rec=9" target="_blank" class="btn btn-sm btn-outline-success">
+                        <a href="https://servicos.pf.gov.br/sismigra-internet/faces/publico/tipoSolicitacao/solicitarRegistroEmissaoCie.seam?" target="_blank" class="btn btn-sm btn-outline-success">
                             <i class="bi bi-card-list me-1"></i> Formulario Online
                         </a>
                         </div>
@@ -883,7 +924,7 @@
                             <li><strong>VITEM IV:</strong> Código <code>140120</code> — R$ 204,77</li>
                             <li><strong>MERCOSUR:</strong> Código <code>140066</code> (R$ 168,13) + Código <code>140120</code> (R$ 204,77)</li>
                         </ul>
-                        <a href="https://servicos.dpf.gov.br/gru2/gru?nac=1&rec=9" target="_blank" class="btn btn-sm btn-outline-success">
+                        <a href="https://servicos.pf.gov.br/gru2/gru?nac=1&rec=9" target="_blank" class="btn btn-sm btn-outline-success">
                             <i class="bi bi-cash-stack me-1"></i> Generar Guía GRU Online
                         </a>
                         </div>
@@ -900,7 +941,7 @@
                             <div><strong>Estado (UF):</strong> SP</div>
                             <div><strong>Puesto de Atención:</strong> <code>PEP/SCL/DPF/AQA/SP</code> (Delegación en Araraquara/SP)</div>
                         </div>
-                        <a href="https://servicos.dpf.gov.br/agenda-web/acessar" target="_blank" class="btn btn-sm btn-fzea">
+                        <a href="https://servicos.pf.gov.br/agenda-web/acessar" target="_blank" class="btn btn-sm btn-fzea">
                             <i class="bi bi-calendar-event me-1"></i> Agendar Cita en el Sistema
                         </a>
                         </div>
@@ -983,7 +1024,28 @@
             id: "sec6",
             icon: "bi-wifi",
             title: "6. Wi-Fi y Correo USP",
-            content: `<p>Acceso a red Eduroam y correo institucional <code>nombre@usp.br</code>.</p>`
+            content: `<div class="alert alert-warning border-start border-4 border-warning mb-3">
+                        <div class="d-flex align-items-center mb-1">
+                          <i class="bi bi-exclamation-triangle-fill fs-4 me-2 text-dark"></i>
+                          <strong>Correo Electrónico Alternativo</strong>
+                        </div>
+                        <p class="d-block"><small>El correo alternativo es la dirección electrónica que utilizó previamente para contactar a la FZEA, necesaria para la activación de su correo USP.</small></p>
+                        <small><p class="mb-1">Si recibe un aviso indicando que el correo no está registrado:</p></small>
+                        <small><p class="mb-1">Estudiantes de Pregrado: Contactar a la CRInt.</p></small>
+                        <small><p class="mb-0">Estudiantes de Posgrado: Contactar a la Oficina de Posgrado.</p></small>
+                      </div>
+                      <p>Cada estudiante recibe un correo institucional de la USP (tipo <code>nombre@usp.br</code>), utilizado para recibir comunicados oficiales y acceder a plataformas como e-Aulas, Moodle y Google Workspace (Drive, Agenda, Meet, etc.).</p>
+                      <p>Además, todos los estudiantes de la FZEA tienen acceso a la red inalámbrica Eduroam, disponible en todo el campus. Para conectarse a través de un smartphone, es necesario utilizar el login USP (número USP + contraseña única).</p>
+                      <p>Para dispositivos como laptops y computadoras de escritorio, es necesario realizar la descarga del instalador de Eduroam y utilizar el login USP (número USP + contraseña única).</p>
+                      <p>Red Wi-Fi oficial en el campus: <strong>Eduroam</strong> (utilizar número USP y contraseña única).</p>
+                      <div class="d-flex flex-wrap gap-2 mt-3">
+                        <a href="https://id.usp.br/primeiro-acesso" target="_blank" class="btn btn-outline-primary btn-sm">
+                          <i class="bi bi-envelope-fill me-1"></i> Crear Correo USP
+                        </a>
+                        <a href="https://cat.eduroam.org/?idp=761" target="_blank" class="btn btn-outline-primary btn-sm">
+                          <i class="bi bi-wifi me-1"></i> Acceso Eduroam Desktop
+                        </a>
+                      </div>`
           },
           {
             id: "sec7",
@@ -1105,8 +1167,8 @@
     }
   </script>
   <!-- Botão Flutuante do Mapa -->
-    <a id="btn-mapa-flutuante" href="#" target="_blank" class="btn-mapa-flutuante" title="Mapa do Campus">
-     🗺️
+    <a id="btn-mapa-flutuante" href="https://drive.google.com/file/d/1R7rSP2208rkF1E5No1tmbuACBZ0W-GTy/view?usp=sharing" target="_blank" class="btn-mapa-flutuante" title="Mapa do Campus">
+      🗺️ <span id="btn-mapa-texto"></span>
     </a>
 </body>
 </html>
