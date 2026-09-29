@@ -124,95 +124,106 @@
     }
 
     </style>    
-</head>
-<body>
+    </head>
+    <body>
 
-  <!-- Header Bar com Logos e Texto Centralizado -->
-  <div class="header-bar p-3 mb-4">
-    <div class="container-fluid">
-      <div class="row align-items-center">
-        
-        <!-- Logo Esquerda: FZEA -->
-        <div class="col-md-2 text-center text-md-start mb-2 mb-md-0">
-          <img src="https://lh3.googleusercontent.com/d/1dqxFlwVV5FHs_ONr6JgZLSjoIlgcxord" alt="Logo FZEA" style="max-height: 100px; width: auto;" onerror="this.style.display='none'">
-        </div>
-
-        <!-- Texto Central -->
-        <div class="col-md-8 text-center">
-          <h3 class="fw-bold m-0">UNIVERSIDADE DE SÃO PAULO</h3>
-          <p class="m-0 text-warning fw-semibold">Faculdade de Zootecnia e Engenharia de Alimentos - FZEA</p>
-          <small class="text-light opacity-75" id="headerSub">Guia do Estudante / Student Guide / Guía del Estudiante</small>
-        </div>
-
-        <!-- Logo Direita: CRInt -->
-        <div class="col-md-2 text-center text-md-end mt-2 mt-md-0">
-          <img src="https://lh3.googleusercontent.com/d/1zaNlVXlznzicJAKlcqY8kJdOM5rkiZbZ" alt="Logo CRInt" style="max-height: 100px; width: auto;" onerror="this.style.display='none'">
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-    <div class="container pb-5">
-    <div class="row justify-content-center">
-        <div class="col-lg-10">
-        <div class="card p-4">
+      <!-- Header Bar com Logos e Texto Centralizado -->
+      <div class="header-bar p-3 mb-4">
+        <div class="container-fluid">
+          <div class="row align-items-center">
             
-            <!-- Cabeçalho do Card & Seletor de Idiomas -->
-            <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2 border-bottom pb-3">
-            <h4 class="fw-bold text-primary m-0" id="cardTitle"><i class="bi bi-journal-bookmark-fill me-2"></i>Guia do Estudante FZEA</h4>
-            
-            <div class="btn-group" role="group" aria-label="Idioma">
-                <button type="button" class="btn btn-fzea active btn-lang d-inline-flex align-items-center gap-1" onclick="setLanguage('pt', this)" title="Português">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 720 500" class="rounded-1">
-                    <rect width="720" height="500" fill="#009b3a"/>
-                    <polygon points="360,35 685,250 360,465 35,250" fill="#fedf00"/>
-                    <circle cx="360" cy="250" r="120" fill="#002776"/>
-                    <path d="M240,260 a125,125 0 0,1 235,-20" fill="none" stroke="#fff" stroke-width="14"/>
-                </svg>
-                <span>PT</span>
-                </button>
-
-                <button type="button" class="btn btn-outline-primary btn-lang d-inline-flex align-items-center gap-1" onclick="setLanguage('en', this)" title="English">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 650 400" class="rounded-1">
-                    <rect width="650" height="400" fill="#b22234"/>
-                    <path d="M0,31h650M0,92h650M0,154h650M0,215h650M0,277h650M0,338h650" stroke="#fff" stroke-width="31"/>
-                    <rect width="260" height="215" fill="#3c3b6e"/>
-                </svg>
-                <span>EN</span>
-                </button>
-
-                <button type="button" class="btn btn-outline-primary btn-lang d-inline-flex align-items-center gap-1" onclick="setLanguage('es', this)" title="Español">
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 750 500" class="rounded-1">
-                    <rect width="750" height="500" fill="#c60b1e"/>
-                    <rect y="125" width="750" height="250" fill="#ffc400"/>
-                </svg>
-                <span>ES</span>
-                </button>
-            </div>
+            <!-- Logo Esquerda: FZEA -->
+            <div class="col-md-2 text-center text-md-start mb-2 mb-md-0">
+              <img src="https://lh3.googleusercontent.com/d/1dqxFlwVV5FHs_ONr6JgZLSjoIlgcxord" alt="Logo FZEA" style="max-height: 100px; width: auto;" onerror="this.style.display='none'">
             </div>
 
-            <!-- Filtro / Seletor Rápido de Seção -->
-            <div class="mb-4">
-            <label class="form-label fw-bold" id="labelSelect"><i class="bi bi-funnel me-1"></i>Ir para a Seção:</label>
-            <select id="secaoSelect" class="form-select border-primary fw-semibold" onchange="rolarParaSecao()">
-                <!-- Inserido dinamicamente -->
-            </select>
+            <!-- Texto Central -->
+            <div class="col-md-8 text-center">
+              <h3 class="fw-bold m-0">UNIVERSIDADE DE SÃO PAULO</h3>
+              <p class="m-0 text-warning fw-semibold">Faculdade de Zootecnia e Engenharia de Alimentos - FZEA</p>
+              <small class="text-light opacity-75" id="headerSub">Guia do Estudante / Student Guide / Guía del Estudiante</small>
             </div>
-          <hr class="my-3">
 
-          <!-- Sanfona / Accordion com o Conteúdo do Guia -->
-          <div class="accordion" id="accordionGuia">
-            <!-- Conteúdo dinâmico via JavaScript -->
+            <!-- Logo Direita: CRInt -->
+            <div class="col-md-2 text-center text-md-end mt-2 mt-md-0">
+              <img src="https://lh3.googleusercontent.com/d/1zaNlVXlznzicJAKlcqY8kJdOM5rkiZbZ" alt="Logo CRInt" style="max-height: 100px; width: auto;" onerror="this.style.display='none'">
+            </div>
+
           </div>
-
         </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="container pb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+            <div class="card p-4">
+                
+                <!-- Cabeçalho do Card, Seletor de Idiomas & Modo Escuro -->
+                <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-2 border-bottom pb-3">
+                  <h4 class="fw-bold text-primary m-0" id="cardTitle"><i class="bi bi-journal-bookmark-fill me-2"></i>Guia do Estudante FZEA</h4>
+                  
+                  <!-- Container agrupando Idiomas e Modo Escuro lado a lado -->
+                  <div class="d-flex align-items-center gap-2">
+                    
+                    <!-- Seletor de Idiomas -->
+                    <div class="btn-group" role="group" aria-label="Idioma">
+                      <button type="button" class="btn btn-fzea active btn-lang d-inline-flex align-items-center gap-1" onclick="setLanguage('pt', this)" title="Português">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 720 500" class="rounded-1">
+                          <rect width="720" height="500" fill="#009b3a"/>
+                          <polygon points="360,35 685,250 360,465 35,250" fill="#fedf00"/>
+                          <circle cx="360" cy="250" r="120" fill="#002776"/>
+                          <path d="M240,260 a125,125 0 0,1 235,-20" fill="none" stroke="#fff" stroke-width="14"/>
+                        </svg>
+                        <span>PT</span>
+                      </button>
+
+                      <button type="button" class="btn btn-outline-primary btn-lang d-inline-flex align-items-center gap-1" onclick="setLanguage('en', this)" title="English">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 650 400" class="rounded-1">
+                          <rect width="650" height="400" fill="#b22234"/>
+                          <path d="M0,31h650M0,92h650M0,154h650M0,215h650M0,277h650M0,338h650" stroke="#fff" stroke-width="31"/>
+                          <rect width="260" height="215" fill="#3c3b6e"/>
+                        </svg>
+                        <span>EN</span>
+                      </button>
+
+                      <button type="button" class="btn btn-outline-primary btn-lang d-inline-flex align-items-center gap-1" onclick="setLanguage('es', this)" title="Español">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="14" viewBox="0 0 750 500" class="rounded-1">
+                          <rect width="750" height="500" fill="#c60b1e"/>
+                          <rect y="125" width="750" height="250" fill="#ffc400"/>
+                        </svg>
+                        <span>ES</span>
+                      </button>
+                    </div>
+
+                    <!-- Botão do Modo Escuro -->
+                    <button type="button" id="btnDarkMode" class="btn btn-outline-secondary d-inline-flex align-items-center gap-1" title="Alternar Modo Escuro" onclick="toggleDarkMode()">
+                      <i class="bi bi-moon-stars-fill" id="darkModeIcon"></i>
+                    </button>
+
+                  </div>
+                </div>
+
+                <!-- Filtro / Seletor Rápido de Seção -->
+                <div class="mb-4">
+                  <label class="form-label fw-bold" id="labelSelect"><i class="bi bi-funnel me-1"></i>Ir para a Seção:</label>
+                  <select id="secaoSelect" class="form-select border-primary fw-semibold" onchange="rolarParaSecao()">
+                      <!-- Inserido dinamicamente -->
+                  </select>
+                </div>
+              <hr class="my-3">
+
+              <!-- Sanfona / Accordion com o Conteúdo do Guia -->
+              <div class="accordion" id="accordionGuia">
+                <!-- Conteúdo dinâmico via JavaScript -->
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bootstrap JS -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
     const contentData = {
@@ -1429,6 +1440,33 @@
         targetEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
+    // Captura dos elementos do botão do modo noturno
+    const themeToggleBtn = document.getElementById('btnDarkMode');
+    const themeIcon = document.getElementById('darkModeIcon');
+
+    // Função para aplicar o tema e atualizar o ícone
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-bs-theme', theme);
+      localStorage.setItem('theme', theme);
+
+      if (theme === 'dark') {
+        themeIcon.className = 'bi bi-sun-fill text-warning';
+      } else {
+        themeIcon.className = 'bi bi-moon-fill';
+      }
+    }
+
+    // Carrega o tema salvo ou usa a preferência do sistema operacional
+    const savedTheme = localStorage.getItem('theme') || 
+      (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+    setTheme(savedTheme);
+
+    // Alterna o tema ao clicar no botão
+    themeToggleBtn.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-bs-theme');
+      setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
   </script>
   <!-- Botão Flutuante do Mapa -->
     <a id="btn-mapa-flutuante" href="https://drive.google.com/file/d/1R7rSP2208rkF1E5No1tmbuACBZ0W-GTy/view?usp=sharing" target="_blank" class="btn-mapa-flutuante" title="Mapa do Campus">
